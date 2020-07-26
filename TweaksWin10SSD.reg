@@ -1,0 +1,37 @@
+Windows Registry Editor Version 5.00
+
+; Created for: Windows 10 with SSD
+; Created by: Arthur Likhner
+; Updated on: 03.08.2019
+; After executing this file, it is recommended to execute two commands:
+; 1. «fsutil behavior set DisableDeleteNotify 0» — Turns on TRIM
+; 2. «powercfg -h off» — Disable hibernation
+
+; Disable Superfetch and Prefetch
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnableSuperfetch"=dword:00000000
+"EnablePrefetcher"=dword:00000000
+
+; Enables optimization of system files on boot.
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+
+; Disable the creation of a file Layout.ini
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000000
+
+; Disable name creation in MS-DOS format
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisable8dot3NameCreation"=dword:00000001
+
+; Turns off the Windows indexing system
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSearch]
+"Start"=dword:00000004
+
+; Disables system restore
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore]
+"DisableSR"=dword:00000001
+
+; Does not clean up the paging file
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"ClearPageFileAtShutdown"=dword:00000000

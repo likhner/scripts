@@ -1,0 +1,1 @@
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "$drivers = Export-WindowsDriver -Online -Destination C:\Windows\Temp\drivers$drivers | ft ProviderName, ClassName, Date, Version -auto"
