@@ -2,7 +2,7 @@ Windows Registry Editor Version 5.00
 
 ; Created for: Windows 10 LTSC 2019 x64
 ; Created by: Arthur Likhner
-; Updated on: 25.09.2020
+; Updated on: 18.11.2020
 
 ; Maximum taskbar transparency
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -36,6 +36,54 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}]
 @="OneDrive"
 "System.IsPinnedToNameSpaceTree"=dword:00000000
+
+; Disable OneDrive
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
+"DisableLibrariesDefaultSaveToOneDrive"=dword:00000000
+"DisableMeteredNetworkFileSync"=dword:00000000
+"DisableFileSyncNGSC"=dword:00000001
+"DisableFileSync"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\OneDrive]
+"PreventNetworkTrafficPreUserSignIn"=dword:00000001
+
+; Hide "People" from taskbar
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"HidePeopleBar"=dword:00000001
+
+; Change timeout chkdisk to 60sec
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeout"=dword:00000030
+
+; Disable Windows Error Reporting
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+
+; Hide Windows Defender icon from tray
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender Security Center\Systray]
+"HideSystray"=dword:00000001
+
+; Disable autorun
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=dword:000000ff
+
+; Disable Telemetry
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\DataCollection]
+"AllowDesktopAnalyticsProcessing"=dword:00000002
+"AllowDeviceNameInTelemetry"=dword:00000000
+"DoNotShowFeedbackNotifications"=dword:00000001
+"LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\TextInput]
+"AllowLinguisticDataCollection"=dword:00000000
+
+; Disable name creation in MS-DOS format
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisable8dot3NameCreation"=dword:00000001
+
+; Disable the creation of a file Layout.ini
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000000
 
 ; Remove from the context menu "Send"
 [-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\ModernSharing]

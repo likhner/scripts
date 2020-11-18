@@ -2,7 +2,7 @@ Windows Registry Editor Version 5.00
 
 ; Created for: Windows 10 LTSB 2016 x64
 ; Created by: Arthur Likhner
-; Updated on: 26.07.2020
+; Updated on: 18.11.2020
 
 ; Maximum taskbar transparency
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -23,6 +23,10 @@ Windows Registry Editor Version 5.00
 ; Unloading unused DLLs from explorer
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "AlwaysUnloadDLL"=dword:00000001
+
+; Change timeout chkdisk to 60sec
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeout"=dword:00000030
 
 ; Remove OneDrive shortcut from explorer
 [HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}]
@@ -96,19 +100,6 @@ Windows Registry Editor Version 5.00
 ; Disable autorun
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "NoDriveTypeAutoRun"=dword:000000ff
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
-"EnhancedAntiSpoofing"=dword:00000000
-
-; Disable Windows Defender
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
-"DisableAntiSpyware"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection]
-"DisableRealtimeMonitoring"=dword:00000001
-"DisableBehaviorMonitoring"=dword:00000001
-"DisableOnAccessProtection"=dword:00000001
-"DisableIOAVProtection"=dword:00000001
 
 ; Disable OneDrive
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
