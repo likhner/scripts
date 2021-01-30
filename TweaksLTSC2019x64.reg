@@ -2,7 +2,7 @@ Windows Registry Editor Version 5.00
 
 ; Created for: Windows 10 LTSC 2019 x64
 ; Created by: Arthur Likhner
-; Updated on: 30.11.2020
+; Updated on: 30.01.2021
 
 ; Maximum taskbar transparency
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -55,6 +55,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
 "HidePeopleBar"=dword:00000001
 
+; Maximizes the size of the system cache's working set
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management]
+"LargeSystemCache"=dword:00000001
+
 ; Change timeout chkdisk to 60sec
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
 "AutoChkTimeout"=dword:00000030
@@ -84,10 +88,6 @@ Windows Registry Editor Version 5.00
 ; Disable name creation in MS-DOS format
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "NtfsDisable8dot3NameCreation"=dword:00000001
-
-; Disable the creation of a file Layout.ini
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
-"EnableAutoLayout"=dword:00000000
 
 ; Remove from the context menu "Send"
 [-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\ModernSharing]
